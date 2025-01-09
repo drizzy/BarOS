@@ -7,47 +7,53 @@
 
 ## 🔧 Characteristics
 
-<div style="display: flex; align-items: center; flex-direction: row-reverse;">
-  <img src="preview/BarOS.png" alt="BarOS" style="max-width: 100%; height: auto; margin-left: 20px; width: 450px;">
-  <table>
-    <tr>
-      <td><strong>Characteristics</strong></td>
-      <td><strong>Package</strong></td>
-    </tr>
-    <tr>
-      <td>OS</td>
-      <td><a href="https://archlinux.org">Arch Linux</a></td>
-    </tr>
-    <tr>
-      <td>WM</td>
-      <td><a href="https://github.com/baskerville/bspwm">bspwm</a></td>
-    </tr>
-    <tr>
-      <td>hotkey</td>
-      <td><a href="https://github.com/baskerville/sxhkd">sxhkd</a></td>
-    </tr>
-    <tr>
-      <td>Bar</td>
-      <td><a href="https://github.com/polybar/polybar">polybar</a></td>
-    </tr>
-    <tr>
-      <td>Theme</td>
-      <td><a href="https://github.com/dracula/gtk">Dracula GTK</a></td>
-    </tr>
-    <tr>
-      <td>Icons</td>
-      <td><a href="https://github.com/m4thewz/dracula-icons">Dracula Icons</a></td>
-    </tr>
-    <tr>
-      <td>Shell</td>
-      <td><a href="https://www.zsh.org">zsh</a></td>
-    </tr>
-    <tr>
-      <td>Terminal</td>
-      <td><a href="https://sw.kovidgoyal.net/kitty">kitty</a></td>
-    </tr>
-  </table>
-</div>
+<table>
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <td><strong>Characteristics</strong></td>
+          <td><strong>Package</strong></td>
+        </tr>
+        <tr>
+          <td>OS</td>
+          <td><a href="https://archlinux.org">Arch Linux</a></td>
+        </tr>
+        <tr>
+          <td>WM</td>
+          <td><a href="https://github.com/baskerville/bspwm">bspwm</a></td>
+        </tr>
+        <tr>
+          <td>hotkey</td>
+          <td><a href="https://github.com/baskerville/sxhkd">sxhkd</a></td>
+        </tr>
+        <tr>
+          <td>Bar</td>
+          <td><a href="https://github.com/polybar/polybar">polybar</a></td>
+        </tr>
+        <tr>
+          <td>Theme</td>
+          <td><a href="https://github.com/dracula/gtk">Dracula GTK</a></td>
+        </tr>
+        <tr>
+          <td>Icons</td>
+          <td><a href="https://github.com/m4thewz/dracula-icons">Dracula Icons</a></td>
+        </tr>
+        <tr>
+          <td>Shell</td>
+          <td><a href="https://www.zsh.org">zsh</a></td>
+        </tr>
+        <tr>
+          <td>Terminal</td>
+          <td><a href="https://sw.kovidgoyal.net/kitty">kitty</a></td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <img src="preview/BarOS.png" alt="BarOS" style="max-width: 100%; height: auto; width: 750px;">
+    </td>
+  </tr>
+</table>
 
 </br>
 
