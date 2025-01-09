@@ -1,0 +1,25 @@
+#!/bin/env bash
+
+# Run sxhkd
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+# Starting Picom
+picom --config "$HOME/.config/picom/picom.conf" &
+
+# Set wallpaper
+feh --bg-scale "$HOME/.config/wallpaper/sunrise-anime.jpg" &
+
+# Start Polybar
+"$HOME/.config/polybar/launch.sh" &
+
+# Setting up monitors and desktops
+bspc monitor -d I II III IV V VI
+
+# Setting borders and spaces
+bspc config border_width 0
+bspc config window_gap 10
+
+# Additional configuration
+bspc config split_ratio 0.5
+bspc config borderless_monocle true
+bspc config gapless_monocle true

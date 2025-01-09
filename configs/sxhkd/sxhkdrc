@@ -1,0 +1,80 @@
+#
+# wm independent hotkeys
+#
+
+# Open Browser (Edge)
+super + b
+	microsoft-edge-stable
+
+# Open code editor
+super + c
+	code
+
+# Swap the current node and the biggest window
+super + g
+	bspc node -s biggest.window
+
+# Open kdenlive
+super + k
+	kdenlive
+
+# Alternate between the tiled and monocle layout
+super + m
+	desktop -l next
+
+# Open obs
+super + o
+	obs
+
+# Close and kill
+super + {_,shift + }q
+	bspc node -{c,k}
+
+# Screenshot
+super + s 
+	flameshot gui
+
+# Open Telegram Desktop
+super + t
+	telegram-desktop
+
+# Open vlc
+super + v
+	vlc
+
+# System
+super + alt + p
+	$HOME/.config/polybar/scripts/system.sh system_menu
+
+# Quit/restart bspwm
+super + alt + {q,r}
+	bspc {quit,wm -r}
+
+# Wifi
+super + alt + w
+	$HOME/.config/polybar/scripts/network.sh wifi_list
+	
+# focus or send to the given desktop
+super + {_,shift + }{1-6}
+	bspc {desktop -f,node -d} '^{1-6}'
+
+# Move to the previous workspace
+super + Left
+	bspc desktop -f prev
+
+# Move to the next workspace
+super + Right
+	bspc desktop -f next
+
+
+# Terminal emulator
+super + Return
+	kitty
+
+# Launch rofi
+super +@space
+	rofi -theme $HOME/.config/rofi/themes/apps.rasi -show drun
+
+# Reload sxhkd
+super + Escape
+	pkill -USR1 -x sxhkd

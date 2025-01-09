@@ -1,0 +1,83 @@
+/**
+ *
+ * Author : Willow P. (drizzy)
+ * Github : @drizzy
+ *
+ * Theme - Apps
+ * Configuration for Rofi Version: 1.7.5
+ **/
+
+* {
+  background-color: #1E1E2E;
+  text-color: #F8F8F2;
+  separatorcolor: #44475a;
+  font: "Hack Nerd Font 13";
+  spacing: 10px;
+  border: 3px;
+  border-color: #44475a;
+  border-radius: 10px;
+}
+
+window {
+  width: 500px;
+  height: 500px;
+  location: southwest;
+  y-offset: -70px;
+  x-offset: 10px;
+  border: 0;
+}
+
+prompt {
+  border: 0;
+  enabled: false;
+}
+
+inputbar {
+  spacing: 10px;
+  padding: 5px;
+  border: 0;
+  children: [entry,num-rows ];
+}
+
+entry {
+  padding: 5px;
+  border-radius: 5px;
+  horizontal-align: 0.5;
+  placeholder: "Search";
+  placeholder-color: grey;
+}
+
+num-rows{
+  padding: 5px;
+  border-radius: 5px;
+}
+
+listview {
+  padding: 5px 10px;
+  spacing: 10px;
+  scroll-method: 0;
+  fixed-height: false;
+  border: 0;
+}
+
+element {
+  padding: 10px;
+}
+
+element-icon,
+element-text {
+  background-color: transparent;
+  border: 0;
+}
+
+element-icon {
+  size: calc(((100% - 20em) / 7));
+  horizontal-align: 0.5;
+  vertical-align: 0.5;
+  border-radius: 50%;
+}
+
+element selected {
+  background-color: #6272a4;
+  border-radius: 10px;
+}
