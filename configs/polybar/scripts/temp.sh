@@ -16,7 +16,21 @@ ICON_LOW=""
 ICON_MEDIUM=""
 ICON_HIGH=""
 
-TEMP=$(cat /sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input)
+HWMON_DIR=$(find /sys/class/hwmon/ -type l -exec sh -c 'readlink -f "$1"' _ {} \; | grep "coretemp.0" | xargs basename)
+
+if [ -z "$HWMON_DIR" ]; then
+    echo "The hwmon directory for coretemp.0 was not found."
+    exit 1
+fi
+
+TEMP_FILE=$(ls /sys/class/hwmon/"$HWMON_DIR"/temp*_input | head -n 1)
+
+if [ -z "$TEMP_FILE" ]; then
+    echo "Temperature file not found."
+    exit 1
+fi
+
+TEMP=$(cat "$TEMP_FILE")
 TEMP=$((TEMP / 1000))
 
 if [ "$TEMP" -lt 45 ]; then

@@ -24,6 +24,9 @@ sleep 0.5
 polybar player --config="$HOME/.config/polybar/config.ini" &
 sleep 0.5
 
+polybar clock --config="$HOME/.config/polybar/config.ini" &
+sleep 0.5
+
 polybar sysinfo-bar --config="$HOME/.config/polybar/config.ini" &
 sleep 0.5
 

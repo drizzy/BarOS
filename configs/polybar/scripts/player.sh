@@ -15,7 +15,7 @@ button_color="#81A1C1"
 prev_title=""
 prev_artist=""
 scroll_offset=0
-max_length=13
+max_length=23
 scroll_speed=0.3
 padding="     "
 
@@ -24,7 +24,7 @@ while true; do
   status=$(playerctl status 2>/dev/null)
 
   if [[ -z "$status" || "$status" == "Stopped" ]]; then
-    text="󰝚 No track playing"
+    text="    󰝚 No track playing"
     echo "%{F#F5C542}  ${text}%{F-}"
   else
     title=$(playerctl metadata title 2>/dev/null)

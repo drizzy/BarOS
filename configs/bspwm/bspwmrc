@@ -9,6 +9,9 @@ picom --config "$HOME/.config/picom/picom.conf" &
 # Set wallpaper
 feh --bg-scale "$HOME/.config/wallpaper/sunrise-anime.jpg" &
 
+# Set dunst
+dunst &
+
 # Start Polybar
 "$HOME/.config/polybar/launch.sh" &
 
