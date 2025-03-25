@@ -11,14 +11,14 @@
 set -e
 
 if [[ $EUID -eq 0 ]]; then
-    echo "¡This script cannot be run as administrator!" >&2
-    exit 1
+  echo "¡This script cannot be run as administrator!" >&2
+  exit 1
 fi
 
 PACKAGES=("xorg-server" "xorg-xinit" "xorg-xrandr" "xorg-xsetroot" "xorg-xrdb" \
           "xf86-input-libinput" "xf86-video-vesa" "unzip" "curl" "bspwm" "sxhkd" \
-          "polybar" "git" "neovim" "rofi" "picom" "zsh" "kitty" "neofetch" "flameshot" \
-          "feh" "pipewire" "pipewire-alsa" "pipewire-audio" "pipewire-jack" \
+          "polybar" "dunst" "git" "bat" "neovim" "rofi" "picom" "zsh" "kitty" "neofetch" \
+          "flameshot" "feh" "pipewire" "pipewire-alsa" "pipewire-audio" "pipewire-jack" \
           "pipewire-pulse" "playerctl" "lsd" "coreutils" "libnotify" "networkmanager" \
           "systemd" "brightnessctl")
 
@@ -87,6 +87,7 @@ function theme_configuration() {
     fi
 
     if [[ ! -d "$CURSOR_DIR" ]]; then
+      mkdir -p "$CURSOR_DIR" 
       cp -r "$THEME_DIR/kde/cursors/Dracula-cursors"/* "$CURSOR_DIR"
     fi
 
@@ -98,12 +99,18 @@ function theme_configuration() {
 function copy_configurations() {
   msg "\tCOPYING CONFIGURATION"
 
-  PROJECT_DIR="$PWD/configs"
+  PROJECT_DIR="$(dirname "$0")/configs"
   CONFIG_DIR="$HOME/.config"
-  MISC_DIR="$PWD/misc"
+  MISC_DIR="$(dirname "$0")/misc"
 
   log "Copying settings to $CONFIG_DIR"
   mkdir -p "$CONFIG_DIR"
+
+  echo "Current directory: $(dirname "$0")"
+  if [ ! -d "$PROJECT_DIR" ]; then
+    log "Error: $PROJECT_DIR does not exist. Configurations cannot be copied."
+    return 1
+  fi
 
   for dir in "$PROJECT_DIR"/*; do
     BASENAME=$(basename "$dir")
@@ -189,11 +196,11 @@ function others_configuration() {
   PLUGIN_AUTO="$HOME/.plugins/zsh/zsh-autosuggestions"
 
   # Powerlevel10k
-  if [ -d "$HOME/powerlevel10k" ]; then
+  if [ -d "$HOME/.config/powerlevel10k" ]; then
     echo -e ${PURPLE}Powerlevel10k${NC} "is already installed."
   else
     log "Installing Powerlevel10k"
-    git clone --quiet https://github.com/romkatv/powerlevel10k.git "$HOME/powerlevel10k"
+    git clone --quiet https://github.com/romkatv/powerlevel10k.git "$HOME/.config/powerlevel10k"
   fi
 
   # NvChad

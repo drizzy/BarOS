@@ -4,7 +4,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Powerlevel10k theme
-source $HOME/powerlevel10k/powerlevel10k.zsh-theme
+source $HOME/.config/powerlevel10k/powerlevel10k.zsh-theme
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 # Plugins
@@ -22,11 +22,7 @@ HISTFILE=~/.zsh_history
 autoload -Uz compinit && compinit
 
 # Add PATHs
-export PATH="$HOME/.local/share/gem/ruby/3.3.0/bin:$HOME/.local/bin:/snap/bin:/usr/local/bin:/usr/bin:/bin:/usr/sandbox"
-
-# This loads nvm
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+export PATH="$HOME/.local/bin:/snap/bin:/usr/local/bin:/usr/bin:/bin:/usr/sandbox"
 
 # Aliases
 alias ll="lsd -lh --group-dirs=first"
@@ -34,7 +30,7 @@ alias la="lsd -a --group-dirs=first"
 alias lla="lsd -lha --group-dirs=first"
 alias ls="lsd --group-dirs=first"
 alias cat="bat"
-alias img="kitty +kitten icat"
+alias icat="kitty +kitten icat"
 
 function extractPorts() {
   ports="$(grep -oP '\d{1,5}/open' "$1" | awk -F'/' '{print $1}' | xargs | tr ' ' ',')"

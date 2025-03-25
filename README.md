@@ -81,7 +81,7 @@
 ### Installed Packages:
 
 ```bash
-xorg-server, xorg-xinit, xorg-xrandr, xorg-xsetroot, xorg-xrdb, xf86-input-libinput, xf86-video-vesa, unzip, curl, bspwm, sxhkd, polybar, git, neovim, rofi, picom, zsh, kitty, neofetch, flameshot, feh, pipewire, pipewire-alsa, pipewire-audio, pipewire-jack, pipewire-pulse, playerctl, lsd, coreutils, libnotify, networkmanager, systemd, brightnessctl
+xorg-server, xorg-xinit, xorg-xrandr, xorg-xsetroot, xorg-xrdb, xf86-input-libinput, xf86-video-vesa, unzip, curl, bspwm, sxhkd, polybar, dunst, bat, git, neovim, rofi, picom, zsh, kitty, neofetch, flameshot, feh, pipewire, pipewire-alsa, pipewire-audio, pipewire-jack, pipewire-pulse, playerctl, lsd, coreutils, libnotify, networkmanager, systemd, brightnessctl
 ```
 
 ### Main functions:
